@@ -20,7 +20,7 @@ const isLargest3Calories = (
 };
 
 export const getElves = (file: "test" | "real"): ElfCalories[] =>
-  readInput(file, 1).split("\n\n").map(parseElf);
+  readInput(file, 1, "\n\n").map(parseElf);
 
 export const sumElf = (elf: ElfCalories): number =>
   elf.reduce((acc, cals) => acc + cals);

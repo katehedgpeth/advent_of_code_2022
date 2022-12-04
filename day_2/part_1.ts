@@ -38,9 +38,6 @@ const SHORTHAND_DICT = {
   ...OPPONENT_MOVE_SHORTHAND_DICT,
 };
 
-export const getInput = (name: "test" | "real"): string[] =>
-  readInput(name, 2).split("\n");
-
 const getOutcome = (round: Round): Outcome => {
   const { me, opponent } = round;
   if (me === opponent) return "draw";

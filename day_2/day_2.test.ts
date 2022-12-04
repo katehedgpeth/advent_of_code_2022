@@ -1,16 +1,15 @@
-import {
-  getRounds,
-  getTotalScore as getTotalScorePart1,
-  getInput,
-} from "./part_1";
+import readInput from "../read_input";
+import { getRounds, getTotalScore as getTotalScorePart1 } from "./part_1";
 import { getTotalScore as getTotalScorePart2 } from "./part_2";
+
+const testInput = readInput("test", 2);
+const realInput = readInput("real", 2);
 
 describe("Day 2", () => {
   describe(`Part 1
   What would your total score be if everything goes exactly according to your strategy guide?`, () => {
     test("Test Input", () => {
-      const input = getInput("test");
-      const rounds = getRounds(input);
+      const rounds = getRounds(testInput);
       expect(rounds).toEqual([
         { opponent: "rock", me: "paper" },
         { opponent: "paper", me: "rock" },
@@ -19,7 +18,7 @@ describe("Day 2", () => {
       expect(getTotalScorePart1(rounds)).toEqual(15);
     });
     test("Real Input", () => {
-      expect(getTotalScorePart1(getRounds(getInput("real")))).toEqual(15523);
+      expect(getTotalScorePart1(getRounds(realInput))).toEqual(15523);
     });
   });
 
@@ -27,12 +26,11 @@ describe("Day 2", () => {
           Following the Elf's instructions for the second column,
           what would your total score be if everything goes exactly according to your strategy guide?`, () => {
     test("Test Input", () => {
-      const input = getInput("test");
-      expect(getTotalScorePart2(input)).toBe(12);
+      expect(getTotalScorePart2(testInput)).toBe(12);
     });
     test("Real Input", () => {
-      const input = getInput("real");
-      expect(getTotalScorePart2(input)).toBe(15702);
+      const input = readInput("real", 2);
+      expect(getTotalScorePart2(realInput)).toBe(15702);
     });
   });
 });
