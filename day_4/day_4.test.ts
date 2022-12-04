@@ -6,6 +6,7 @@ import {
   parsePairs,
   parseRange,
 } from "./part_1";
+import { countOverlappingPairs } from "./part_2";
 
 const testInput = readInput("test", 4);
 const realInput = readInput("real", 4);
@@ -88,6 +89,15 @@ describe("Day 4", () => {
     });
     test("Real Input", () => {
       expect(countContainedPairs(realInput)).toBe(459);
+    });
+  });
+  describe(`Part 2
+            In how many assignment pairs do the ranges overlap?`, () => {
+    test("Test Input", () => {
+      expect(countOverlappingPairs(testInput)).toBe(4);
+    });
+    test("Real Input", () => {
+      expect(countOverlappingPairs(realInput)).toBe(779);
     });
   });
 });
