@@ -1,8 +1,5 @@
 import fs from "fs";
-import { findLargestElf, getElves, sumElf } from "./part_1";
-
-const getInput = (file: "test" | "real") =>
-  fs.readFileSync(`./day_1/${file}_input.txt`, { encoding: "utf-8" });
+import { findLargest3Elves, findLargestElf, getElves, sumElf } from "./part_1";
 
 describe(`Find the Elf carrying the most Calories.
       How many total Calories is that Elf carrying?`, () => {
@@ -16,5 +13,18 @@ describe(`Find the Elf carrying the most Calories.
   test("Real Input", () => {
     const elves = getElves("real");
     expect(findLargestElf(elves)).toBe(68787);
+  });
+});
+
+describe(`Find the top three Elves carrying the most Calories.
+          How many Calories are those Elves carrying in total?`, () => {
+  test("Test Input", () => {
+    const elves = getElves("test");
+    expect(findLargest3Elves(elves)).toEqual([24000, 11000, 10000]);
+    expect(sumElf(findLargest3Elves(elves))).toEqual(45000);
+  });
+  test("Real Input", () => {
+    const elves = getElves("real");
+    expect(sumElf(findLargest3Elves(elves))).toEqual(198041);
   });
 });
