@@ -1,5 +1,5 @@
 import fs from "fs";
-import { findLargest3Elves, findLargestElf, getElves, sumElf } from "./part_1";
+import { findLargest3Elves, findLargestElf, getElves, sumElf } from "./day_1";
 
 describe(`Find the Elf carrying the most Calories.
       How many total Calories is that Elf carrying?`, () => {
