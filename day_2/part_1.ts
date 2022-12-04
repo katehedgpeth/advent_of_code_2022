@@ -1,36 +1,44 @@
 import readInput from "../read_input";
 
-type OppPlay = "A" | "B" | "C";
-type MyPlay = "X" | "Y" | "Z";
-type PlayName = "rock" | "paper" | "scissors";
-type Outcome = "win" | "lose" | "draw";
+export type OppPlay = "A" | "B" | "C";
+export type MyPlay = "X" | "Y" | "Z";
+export type PlayName = "rock" | "paper" | "scissors";
+export type Outcome = "win" | "lose" | "draw";
 interface Round {
   me: PlayName;
   opponent: PlayName;
 }
 
-const PLAY_SCORE: Record<PlayName, number> = {
+export const PLAY_SCORE: Record<PlayName, number> = {
   rock: 1,
   paper: 2,
   scissors: 3,
 };
 
-const OUTCOME_SCORE: Record<Outcome, number> = {
+export const OUTCOME_SCORE: Record<Outcome, number> = {
   lose: 0,
   draw: 3,
   win: 6,
 };
 
-const SHORTHAND_DICT: Record<OppPlay | MyPlay, PlayName> = {
+export const OPPONENT_MOVE_SHORTHAND_DICT: Record<OppPlay, PlayName> = {
   A: "rock",
   B: "paper",
   C: "scissors",
+};
+
+const MY_MOVE_SHORTHAND_DICT: Record<MyPlay, PlayName> = {
   X: "rock",
   Y: "paper",
   Z: "scissors",
 };
 
-export const getInput = (name: "test" | "real") =>
+const SHORTHAND_DICT = {
+  ...MY_MOVE_SHORTHAND_DICT,
+  ...OPPONENT_MOVE_SHORTHAND_DICT,
+};
+
+export const getInput = (name: "test" | "real"): string[] =>
   readInput(name, 2).split("\n");
 
 const getOutcome = (round: Round): Outcome => {
