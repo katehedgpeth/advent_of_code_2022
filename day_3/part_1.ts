@@ -1,4 +1,4 @@
-const PRIORITIES = (
+export const PRIORITIES = (
   "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ).split("");
 
