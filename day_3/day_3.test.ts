@@ -8,8 +8,7 @@ const realInput = readInput("real", 3);
 describe("Day 2", () => {
   describe(`Part 1
   Find the item type that appears in both compartments of each rucksack.
-  What is the sum of the priorities of those item types?
-`, () => {
+  What is the sum of the priorities of those item types?`, () => {
     test("getCompartments", () => {
       expect(getCompartments("aabb")).toEqual(["aa", "bb"]);
     });

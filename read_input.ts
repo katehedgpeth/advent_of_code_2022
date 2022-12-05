@@ -9,5 +9,4 @@ const readInput = (
     .readFileSync(`./day_${day}/${name}_input.txt`, { encoding: "utf-8" })
     .split(split);
 
-
 export default readInput;

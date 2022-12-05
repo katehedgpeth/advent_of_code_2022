@@ -8,8 +8,8 @@ import {
 } from "./part_1";
 
 interface Round {
-  oppPlay: PlayName;
   neededOutcome: Outcome;
+  oppPlay: PlayName;
 }
 
 const NEEDED_OUTCOME_DICT: Record<NeededOutcome, Outcome> = {
@@ -19,12 +19,12 @@ const NEEDED_OUTCOME_DICT: Record<NeededOutcome, Outcome> = {
 };
 
 const NEEDED_PLAY_DICT: Record<PlayName, Record<"win" | "lose", PlayName>> = {
-  paper: { win: "scissors", lose: "rock" },
-  rock: { win: "paper", lose: "scissors" },
-  scissors: { win: "rock", lose: "paper" },
+  paper: { lose: "rock", win: "scissors" },
+  rock: { lose: "scissors", win: "paper" },
+  scissors: { lose: "paper", win: "rock" },
 };
 
-const getNeededPlay = ({ oppPlay, neededOutcome }: Round) => {
+const getNeededPlay = ({ neededOutcome, oppPlay }: Round) => {
   if (neededOutcome === "draw") return oppPlay;
   return NEEDED_PLAY_DICT[oppPlay][neededOutcome];
 };
@@ -38,8 +38,8 @@ const getRounds = (input: string[]): Round[] =>
   input.map((round) => {
     const [abc, xyz] = round.split(" ");
     return {
-      oppPlay: OPPONENT_MOVE_SHORTHAND_DICT[abc],
       neededOutcome: NEEDED_OUTCOME_DICT[xyz],
+      oppPlay: OPPONENT_MOVE_SHORTHAND_DICT[abc],
     };
   });
 

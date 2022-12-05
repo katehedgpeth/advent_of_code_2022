@@ -1,4 +1,4 @@
-import { getPriority, PRIORITIES } from "./part_1";
+import { PRIORITIES } from "./part_1";
 
 type Group = [string, string, string];
 

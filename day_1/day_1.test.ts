@@ -1,4 +1,3 @@
-import fs from "fs";
 import { findLargest3Elves, findLargestElf, getElves, sumElf } from "./day_1";
 
 describe(`Find the Elf carrying the most Calories.
@@ -18,7 +17,7 @@ describe(`Find the Elf carrying the most Calories.
 
 describe(`Find the top three Elves carrying the most Calories.
           How many Calories are those Elves carrying in total?`, () => {
-  test("Test Input", () => {
+  test("Input Input", () => {
     const elves = getElves("test");
     expect(findLargest3Elves(elves)).toEqual([24000, 11000, 10000]);
     expect(sumElf(findLargest3Elves(elves))).toEqual(45000);

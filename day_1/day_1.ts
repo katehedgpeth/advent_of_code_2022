@@ -1,4 +1,3 @@
-import fs from "fs";
 import readInput from "../read_input";
 type ElfCalories = number[];
 type Largest3Calories = [number, number, number];

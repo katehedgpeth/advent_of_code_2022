@@ -1,5 +1,3 @@
-import readInput from "../read_input";
-
 export type OppPlay = "A" | "B" | "C";
 export type MyPlay = "X" | "Y" | "Z";
 export type PlayName = "rock" | "paper" | "scissors";
@@ -10,14 +8,14 @@ interface Round {
 }
 
 export const PLAY_SCORE: Record<PlayName, number> = {
-  rock: 1,
   paper: 2,
+  rock: 1,
   scissors: 3,
 };
 
 export const OUTCOME_SCORE: Record<Outcome, number> = {
-  lose: 0,
   draw: 3,
+  lose: 0,
   win: 6,
 };
 

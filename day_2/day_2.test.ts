@@ -11,9 +11,9 @@ describe("Day 2", () => {
     test("Test Input", () => {
       const rounds = getRounds(testInput);
       expect(rounds).toEqual([
-        { opponent: "rock", me: "paper" },
-        { opponent: "paper", me: "rock" },
-        { opponent: "scissors", me: "scissors" },
+        { me: "paper", opponent: "rock" },
+        { me: "rock", opponent: "paper" },
+        { me: "scissors", opponent: "scissors" },
       ]);
       expect(getTotalScorePart1(rounds)).toEqual(15);
     });
@@ -29,7 +29,6 @@ describe("Day 2", () => {
       expect(getTotalScorePart2(testInput)).toBe(12);
     });
     test("Real Input", () => {
-      const input = readInput("real", 2);
       expect(getTotalScorePart2(realInput)).toBe(15702);
     });
   });
